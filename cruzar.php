@@ -12,10 +12,10 @@ $usuarios = [
     ['nombre' => 'Marta', 'edad' => 26],
 ];
 
-foreach ($usuarios as &$usuario) {
-    foreach ($notas as $clave => $datos) {
-        if ($usuario['nombre'] === $clave) {
-            $usuario['notas'] = $datos["notas"];
+foreach ($usuarios as $clave => $usuario) {
+    foreach ($notas as $clave2 => $datos) {
+        if ($usuario['nombre'] === $clave2) {
+            $usuarios[$clave]['notas'] = $datos["notas"];
         }
     }
 }
