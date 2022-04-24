@@ -20,12 +20,10 @@ foreach ($datas as $k => $data) {
     }
 }
 
-$csv = [];
+$fp = fopen('alojatur_2021.csv', 'w');
 foreach ($datas as $data) {
-    $csv[] = '"' . implode('","', $data) . '"'; // no es la mejor manera de hacerlo
+    fputcsv($fp, $data);
 }
-
-$csv = implode("\n", $csv);
-file_put_contents('alojatur_2021.csv', $csv);
+fclose($fp);
 
 header("Location: dashboard.php?success=1", true, 302);
