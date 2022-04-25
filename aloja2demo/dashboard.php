@@ -24,7 +24,7 @@
         header("Location: index.php?error=2", true, 302);
     }
 ?>
-<h1><?php echo $alojamiento[1]; ?></h1>
+<h1><?php echo htmlentities($alojamiento[1]); ?></h1>
 <?php
     if (isset($_GET['error'])) {
         switch (/** COMPLETAR **/) {
